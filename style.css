@@ -4,7 +4,7 @@ header{
 text-align:center;
 font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-.navbar{
+.navbar {
     text-align:center;
     color:lightblue;
     font-size:medium;
@@ -17,6 +17,11 @@ body{
    margin-bottom: 0px;
    gap:0px;
 
+}
+.container p {
+    text-align:center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
 }
 html, body {
     margin: 0;
@@ -77,22 +82,73 @@ background-position:center;
 
 
 
-.data-box1,.data-box2,.data-box3,.data-box4{
+.data-box1, .data-box2{
   
 border: 1px solid #ccc;
   padding: 20px;
   margin: 10px;
   background: #f9f9f9;
-  border-radius: 8px;
+  border-radius: 20px;
   width: 500px;
-background-color:aqua;
+ background-color:lavenderblush;
+    margin-top:40px;
   vertical-align: top;
+  float:inline-start;
+
+
+ 
+
+}
+.data-box3,.data-box4{
+ border: 1px solid #ccc;
+  padding: 20px;
+  margin: 10px;
+  background: #f9f9f9;
+  border-radius: 20px;
+  width: 500px;
+ background-color:lavenderblush;
+    margin-top:20px;
+  vertical-align: top;
+    
+  float:inline-end;
+    
+}
+
+.data-boxx, .data-boxy{
+display:flex;
+flex-direction:column;
+gap:30px;
+
 
 }
 .container{
   display: flex;
-  gap: 20px;
+  gap: 50px;
 }
 h1,h2{
     color:#204080;
+}
+.data-boxj , .data-boxk , .data-boxi{
+
+border:1px solid lightslategray;
+border-radius:20px;
+padding:30px;
+margin:20px;
+font-family:'Times New Roman', Times, serif
+}
+.data-boxj p5 , .data-boxk p5 , .data-boxi p5 , .mission-box p5 , .vision-box p5 , .dreams-box p5{
+    text-align:center;
+  
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+font-size:large;
+}
+.vision-box , .dreams-box ,.mission-box{
+    border:1px solid lightslategray;
+    border-radius:20px;
+    padding:30px;
+    margin:20px;
+    font-family:'Times New Roman', Times, serif
+}
+nav a:hover{
+    color: aqua;
 }
