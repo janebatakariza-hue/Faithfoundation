@@ -29,7 +29,7 @@ The Faith Foundation website is designed to:
 - Offer opportunities for service and fellowship  
 
 You can visit the live website here:  
-👉 [https://janebatakiriza-hue.github.io/Faithfoundation/](https://janebatakiriza-hue.github.io/Faithfoundation/)
+👉 [https://janebatakiriza-hue.github.io/Faithfoundation/](https://janebatakiriza-hue.github.io/Faithfoundation/index.html)
 
 ---
 
