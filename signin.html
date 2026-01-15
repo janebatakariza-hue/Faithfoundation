@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Sign In - Faith Foundation</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #2f4f6f;
+      --secondary: #f2f6fb;
+      --accent: #c9a24d;
+      --green: #4CAF50;
+      --text-dark: #1f2933;
+      --text-light: #6b7280;
+      --white: #ffffff;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, var(--secondary) 0%, #e8f0e8 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '🌱';
+      position: absolute;
+      font-size: 200px;
+      opacity: 0.03;
+      top: -50px;
+      right: 100px;
+      transform: rotate(-15deg);
+    }
+
+    body::after {
+      content: '✨';
+      position: absolute;
+      font-size: 150px;
+      opacity: 0.03;
+      bottom: -30px;
+      left: 100px;
+      transform: rotate(25deg);
+    }
+
+    .container {
+      background: var(--white);
+      border-radius: 25px;
+      box-shadow: 0 20px 60px rgba(47, 79, 111, 0.15);
+      overflow: hidden;
+      max-width: 450px;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .header {
+      background: linear-gradient(135deg, var(--primary) 0%, #1a3a52 100%);
+      padding: 50px 40px;
+      text-align: center;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '🙏';
+      position: absolute;
+      font-size: 100px;
+      opacity: 0.1;
+      top: -20px;
+      right: -20px;
+    }
+
+    .header-icon {
+      width: 80px;
+      height: 80px;
+      background: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      margin: 0 auto 20px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      margin-bottom: 10px;
+      font-weight: 600;
+      color: #e8f5e9;
+    }
+
+    .header p {
+      font-size: 15px;
+      opacity: 0.95;
+      color: var(--white);
+    }
+
+    .form-container {
+      padding: 45px 40px;
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 14px 18px;
+      border: 2px solid #e0e7ee;
+      border-radius: 12px;
+      font-size: 15px;
+      transition: all 0.3s ease;
+      outline: none;
+      font-family: 'Inter', sans-serif;
+      background: var(--secondary);
+    }
+
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+      border-color: var(--green);
+      background: var(--white);
+      box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.1);
+    }
+
+    .forgot-password {
+      text-align: right;
+      margin-top: 10px;
+    }
+
+    .forgot-password a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .forgot-password a:hover {
+      color: var(--primary);
+    }
+
+    .remember-me {
+      display: flex;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+
+    .remember-me input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-right: 10px;
+      cursor: pointer;
+      accent-color: var(--green);
+    }
+
+    .remember-me label {
+      margin: 0;
+      font-weight: 400;
+      font-size: 14px;
+      color: var(--text-light);
+      cursor: pointer;
+    }
+
+    .btn-signin {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, var(--green) 0%, #66BB6A 100%);
+      color: var(--white);
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 10px;
+      box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+    }
+
+    .btn-signin:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(76, 175, 80, 0.4);
+    }
+
+    .btn-signin:active {
+      transform: translateY(-1px);
+    }
+
+    .divider {
+      text-align: center;
+      margin: 30px 0;
+      position: relative;
+    }
+
+    .divider::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      height: 1px;
+      background: #e0e7ee;
+    }
+
+    .divider span {
+      background: var(--white);
+      padding: 0 20px;
+      position: relative;
+      color: var(--text-light);
+      font-size: 13px;
+    }
+
+    .signup-link {
+      text-align: center;
+      margin-top: 25px;
+      color: var(--text-light);
+      font-size: 14px;
+    }
+
+    .signup-link a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .signup-link a:hover {
+      color: var(--green);
+      text-decoration: underline;
+    }
+
+    .back-home {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .back-home a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .back-home a:hover {
+      color: var(--primary);
+    }
+
+    @media (max-width: 768px) {
+      .form-container {
+        padding: 35px 25px;
+      }
+
+      .header {
+        padding: 40px 25px;
+      }
+
+      .header h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="header-icon">🌱</div>
+      <h1>Faith Foundation</h1>
+      <p>Welcome back! Sign in to continue your journey</p>
+    </div>
+    
+    <div class="form-container">
+      <form action="#" method="POST">
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password" required>
+          <div class="forgot-password">
+            <a href="#forgot">Forgot Password?</a>
+          </div>
+        </div>
+        
+        <div class="remember-me">
+          <input type="checkbox" id="remember" name="remember">
+          <label for="remember">Remember me for 30 days</label>
+        </div>
+        
+        <button type="submit" class="btn-signin">Sign In</button>
+        
+        <div class="divider">
+          <span>or</span>
+        </div>
+        
+        <div class="signup-link">
+          Don't have an account? <a href="create.html">Create Account</a>
+        </div>
+
+        <div class="back-home">
+          <a href="index.html">← Back to Home</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

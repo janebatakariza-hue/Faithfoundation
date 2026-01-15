@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #2f4f6f;      /* Faith blue */
+  --secondary: #f2f6fb;    /* Soft background */
+  --accent: #c9a24d;       /* Warm gold */
+  --text-dark: #1f2933;
+  --text-light: #6b7280;
+  --white: #ffffff;
+}
+
+/* =====================================================
+   BASE
+   ===================================================== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background: var(--secondary);
+  color: var(--text-dark);
+  line-height: 1.7;
+  padding-top: 90px; /* fixed navbar space */
+}
+
+/* =====================================================
+   TYPOGRAPHY
+   ===================================================== */
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+  color: var(--primary);
+}
+
+h1 {
+  font-size: 2.6rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.75rem;
+}
+
+p {
+  font-size: 1rem;
+  color: var(--text-light);
+  max-width: 650px;
+  margin: 1rem auto;
+}
+
+/* =====================================================
+   NAVIGATION
+   ===================================================== */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--white);
+  box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+  z-index: 1000;
+}
+
+.navbar {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 16px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.navbar a:hover {
+  color: var(--accent);
+}
+
+/* =====================================================
+   HEADER / HERO (LOGO PRESERVED)
+   ===================================================== */
+header {
+  background: linear-gradient(
+    rgba(47,79,111,0.6),
+    rgba(47,79,111,0.85)
+  ),
+  url(bg.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 5rem 2rem 4rem;
+  text-align: center;
+  color: var(--white);
+}
+
+header h1,
+header h2 {
+  color: var(--white);
+}
+
+header img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: white;
+  padding: 10px;
+  margin-bottom: 1.5rem;
+}
+
+/* =====================================================
+   SECTION SPACING
+   ===================================================== */
+.main,
+section,
+#about,
+#background,
+#mission,
+#interact,
+#services,
+#team,
+#help {
+  padding: 4rem 2rem;
+}
+
+/* =====================================================
+   HERO TEXT
+   ===================================================== */
+.hero-text {
+  font-size: 1.15rem;
+  max-width: 650px;
+  margin: 2rem auto;
+  text-align: center;
+  color: #374151;
+}
+
+/* =====================================================
+   FLEX LAYOUTS
+   ===================================================== */
+.container,
+.services,
+.section,
+.cont {
+  display: flex;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.section {
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+/* =====================================================
+   IMAGES
+   ===================================================== */
+.image img {
+  width: 300px;
+  height: 200px;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.image img:hover {
+  transform: translateY(-8px);
+}
+
+/* =====================================================
+   CARD SYSTEM (CLEAN & ELEGANT)
+   ===================================================== */
+.data-box1,
+.data-box2,
+.data-box3,
+.data-box4,
+.data-boxj,
+.data-boxk,
+.data-boxi,
+.mission-box,
+.vision-box,
+.dreams-box,
+.support-box,
+.testimony-box,
+.media-box,
+.heart-box,
+.bible-box,
+.prayer-box,
+.youth-box,
+.community-box,
+.workshop-box,
+.friendship-box,
+.team,
+.container1 {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+  margin: 1.5rem auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.data-box1:hover,
+.data-box2:hover,
+.data-box3:hover,
+.data-box4:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 55px rgba(0,0,0,0.12);
+}
+
+/* =====================================================
+   LISTS (NO NOTES FEEL)
+   ===================================================== */
+ul {
+  list-style: none;
+  padding-left: 0;
+  max-width: 600px;
+  margin: 1rem auto;
+}
+
+ul li {
+  padding: 0.6rem 0;
+  color: var(--text-light);
+}
+
+/* =====================================================
+   TEAM SECTION STYLE
+   ===================================================== */
+.container1 {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.container1 figcaption,
+.container1 address {
+  color: #e5e7eb;
+  font-style: normal;
+  margin-top: 0.5rem;
+}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+footer {
+  background: var(--primary);
+  color: var(--white);
+  text-align: center;
+  padding: 2rem;
+  margin-top: 4rem;
+}
+
+footer p {
+  color: #e5e7eb;
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+@media (max-width: 768px) {
+  .container,
+  .services,
+  .section,
+  .cont {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image img {
+    width: 100%;
+    height: auto;
+  }
+
+  body {
+    padding-top: 120px;
+  }
+}
